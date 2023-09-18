@@ -22,7 +22,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-openai.api_key = os.getenv("OPENAI_API_TOKEN")
+##openai.api_key =
 QDRANT_HOST = os.getenv("QDRANT_HOST")
 QDRANT_APIKEY =os.getenv("QDRANT_APIKEY")
 
@@ -172,6 +172,7 @@ def process_website(website,index_name):
             print("websiteData  got")
             data = websiteData["dataAttached"]["scrappedData"]
         else:
+            print("eroor")
             return {"statusCode":websiteData["statusCode"],
                     "statusMessage":websiteData["statusMessage"],
                     "dataAttached": None}
@@ -184,6 +185,7 @@ def process_website(website,index_name):
             print("database done")
             return {"statusCode": 200, "statusMessage": 'Proccess completed successfully'}
         else:
+            print("error")
             return {"statusCode": 500,
                     "statusMessage":"Error Occurred: "  + str(database["statusMessage"])
                     }
