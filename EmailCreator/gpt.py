@@ -1,5 +1,5 @@
 import openai
-openai.api_key = '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'
+# api key openai.api_key =
 def call_gpt(prompt):
     final_prompt = "Write me a professionally sounding email "
     final_prompt+="Your role is of an email creator for marketing purpose. "
